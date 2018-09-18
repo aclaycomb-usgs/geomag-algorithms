@@ -19,13 +19,27 @@ CHANNEL_FROM_COMPONENT = {
     'DST': 'X4',
     'K': 'XK'
 }
+
+# Legacy components that map to channel suffixes
+CHANNEL_FROM_COMPONENT_LEGACY = {
+    'H': 'VH',
+    'E': 'VE',
+    'Z': 'VZ',
+    'F': 'SF',
+    'X': 'VX',
+    'Y': 'VY',
+    'D': 'VD',
+    # e-field
+    'E-E': 'EX',
+    'E-N': 'EY'
+    # derived indices omitted (deprecated)
+}
 # reverse lookup of component from channel
 COMPONENT_FROM_CHANNEL = dict(
         (v, k) for (k, v) in CHANNEL_FROM_COMPONENT.iteritems())
 
-
 class SNCLException(Exception):
-    pass
+   pass
 
 
 def get_scnl(observatory,
